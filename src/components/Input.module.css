@@ -1,0 +1,17 @@
+.container {
+  width: 400px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 5px 3px;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  overflow: hidden;
+}
+.btn {
+  background-color: gray;
+  padding: 10px 0;
+  border: 2px solid rgb(59, 57, 57);
+  border-radius: 10px;
+}
