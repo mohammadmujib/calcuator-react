@@ -5,6 +5,16 @@ function Input() {
   const [powerOn, setPowerOn] = useState(false);
   const [outputText, setOutputText] = useState("");
 
+  const handleResult = (e) => {
+    const outputArray = outputText.split("");
+    console.log(outputArray);
+    let result = 0;
+    for (let i = 0; i < outputArray.length; i++) {
+      result += Number(outputArray[i]);
+    }
+    console.log(result);
+  };
+
   return (
     <>
       <Output powerOn={powerOn} outputText={outputText} />
@@ -116,10 +126,7 @@ function Input() {
         >
           .
         </div>
-        <div
-          className={style.btn}
-          onClick={(e) => setOutputText(outputText + e.target.innerText)}
-        >
+        <div className={style.btn} onClick={handleResult}>
           =
         </div>
         <div
