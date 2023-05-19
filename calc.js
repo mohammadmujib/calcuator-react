@@ -12,3 +12,9 @@ for (let i = 0; i < arr.length; i++) {
 }
 res.push(Number(left));
 console.log(res);
+
+const ans = 0;
+for (let i = 0; i < res.length; i++) {
+  if (isNaN(res[i])) {
+  }
+}

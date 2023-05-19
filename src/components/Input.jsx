@@ -3,16 +3,29 @@ import style from "./Input.module.css";
 import Output from "./Output";
 function Input() {
   const [powerOn, setPowerOn] = useState(false);
-  const [outputText, setOutputText] = useState("");
+  const [outputText, setOutputText] = useState("0");
 
-  const handleResult = (e) => {
-    const outputArray = outputText.split("");
-    console.log(outputArray);
-    let result = 0;
-    for (let i = 0; i < outputArray.length; i++) {
-      result += Number(outputArray[i]);
+  const handleResult = () => {
+    const arr = outputText.split("");
+    const res = [];
+    let left = "";
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] == "+") {
+        res.push(Number(left));
+        res.push(arr[i]);
+        left = "";
+        continue;
+      }
+      left += arr[i];
     }
-    console.log(result);
+    res.push(Number(left));
+    console.log(res);
+    let ans = 0;
+    ans += res[0];
+    for (let i = 1; i < res.length; i += 2) {
+      ans += res[i + 1];
+    }
+    setOutputText(ans);
   };
 
   return (
